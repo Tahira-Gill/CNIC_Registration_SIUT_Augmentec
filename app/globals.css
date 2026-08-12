@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bone text-ink font-body antialiased;
+  }
+  ::selection {
+    @apply bg-gold/30 text-ink;
+  }
+  :focus-visible {
+    outline: 2px solid #B8923F;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .font-feature-tnum {
+    font-feature-settings: 'tnum' 1, 'ss01' 1;
+  }
+}
+
+/* Perforated card edge, used on section headers to evoke a CNIC card strip */
+.perforated-edge {
+  background-image: radial-gradient(circle, rgba(246,243,234,0.55) 1.5px, transparent 1.6px);
+  background-size: 10px 10px;
+  background-position: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
